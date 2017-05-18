@@ -25,12 +25,12 @@ public class BlogWebsiteController {
         Iterable<BlogPost> blogPosts = blogs.findAll();
         model.addAttribute("blogposts", blogPosts);
 
-
         return "index";
     }
 
-    @RequestMapping(path = "/post.html", method = RequestMethod.GET)
-    public String postPage() {
+    @RequestMapping(path = "/blog-post/{id}", method = RequestMethod.GET)
+    public String displayBlog(Model model) {
+
         return "post";
     }
 
